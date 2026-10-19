@@ -3,12 +3,7 @@ name: Daily Index Update
 
 on:
   workflow_dispatch:
-    inputs:
-      run_minutes:
-        description: 'Test duration in minutes (1-30)'
-        type: number
-        required: true
-        default: 3
+
   schedule:
     - cron: "12 21 * * *"
     - cron: "42 2 * * *"
@@ -48,41 +43,56 @@ jobs:
         env:
           TRIGGER: ${{ github.event_name }}
           CRON: ${{ github.event.schedule }}
-          RUN_MINUTES: ${{ inputs.run_minutes }}
         run: |
           python - <<'PY' >> "$GITHUB_OUTPUT"
           import os
           from datetime import datetime, timedelta
           from zoneinfo import ZoneInfo
 
-          trigger = os.environ.get('TRIGGER')
-          now = datetime.now(ZoneInfo('Asia/Seoul'))
-          if trigger == 'workflow_dispatch':
-              try:
-                  minutes = int(os.environ.get('RUN_MINUTES') or '3')
-              except ValueError:
-                  minutes = 3
-              print(f'seconds={min(30, max(1, minutes)) * 60}')
-          else:
-              next_slots = {
-                  '12 21 * * *': (11, 42),
-                  '42 2 * * *': (17, 12),
-                  '12 8 * * *': (22, 42),
-                  '42 13 * * *': (0, 0),
-              }
-              slot = next_slots.get(os.environ.get('CRON'))
+          now = datetime.now(ZoneInfo("Asia/Seoul"))
+          trigger = os.environ.get("TRIGGER", "")
+
+          slots = {
+              "12 21 * * *": (11, 42),
+              "42 2 * * *": (17, 12),
+              "12 8 * * *": (22, 42),
+              "42 13 * * *": (0, 0),
+          }
+
+          if trigger == "schedule":
+              slot = slots.get(os.environ.get("CRON", ""))
               if slot is None:
-                  raise SystemExit('Unknown schedule')
-              end = now.replace(
-                  hour=slot[0],
-                  minute=slot[1],
-                  second=0,
-                  microsecond=0
-              )
-              if slot == (0, 0) and now.hour >= 22:
-                  end += timedelta(days=1)
-              remain = (end - now).total_seconds() - 60
-              print(f'seconds={min(330 * 60, max(60, int(remain)))}')
+                  raise SystemExit("Unknown schedule")
+
+          else:
+              current = (now.hour, now.minute)
+
+              if (6, 12) <= current < (11, 42):
+                  slot = (11, 42)
+              elif (11, 42) <= current < (17, 12):
+                  slot = (17, 12)
+              elif (17, 12) <= current < (22, 42):
+                  slot = (22, 42)
+              elif current >= (22, 42):
+                  slot = (0, 0)
+              else:
+                  print("seconds=0")
+                  raise SystemExit
+
+          target = now.replace(
+              hour=slot[0],
+              minute=slot[1],
+              second=0,
+              microsecond=0
+          )
+
+          if slot == (0, 0) and now.hour >= 22:
+              target += timedelta(days=1)
+
+          seconds = int((target - now).total_seconds()) - 60
+          seconds = max(60, min(19800, seconds))
+
+          print(f"seconds={seconds}")
           PY
 
       - name: Verify configuration
@@ -101,7 +111,12 @@ jobs:
           RUN_SECONDS: ${{ steps.duration.outputs.seconds }}
           NOTICE_ENDPOINT: ${{ secrets.NOTICE_ENDPOINT }}
           NOTICE_TARGET: ${{ secrets.NOTICE_TARGET }}
-        run: python -u sync_worker.py
+        run: |
+          if [[ "$RUN_SECONDS" -eq 0 ]]; then
+            echo "Outside scheduled monitoring hours"
+            exit 0
+          fi
+          python -u sync_worker.py
 
       - name: Persist state
         if: always()
@@ -109,7 +124,9 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+
           git add -- cache_index.json cache_snapshot.json .cache_ready cache_notice.json
+
           if git diff --cached --quiet; then
             echo 'No state updates'
           else

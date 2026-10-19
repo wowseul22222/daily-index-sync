@@ -1718,7 +1718,7 @@
       "link": "https://m.megabox.co.kr/booking/seat?playSchdlNo=2610311351019",
       "movie": "최종면접",
       "preparing_explicit": false,
-      "rest_seat": 93,
+      "rest_seat": 92,
       "schedule_no": "2610311351019",
       "screen": "MEGA | LED 4관",
       "sold_out_explicit": false,
@@ -1726,7 +1726,7 @@
       "status": "OPEN",
       "total_seat": 298,
       "type": "무대인사",
-      "updated_at_kst": "2026-10-19T10:22:18+09:00"
+      "updated_at_kst": "2026-10-19T11:40:51+09:00"
     },
     "1351|20261031|2610311351020|무대인사": {
       "date": "20261031",
@@ -1734,7 +1734,7 @@
       "link": "https://m.megabox.co.kr/booking/seat?playSchdlNo=2610311351020",
       "movie": "최종면접",
       "preparing_explicit": false,
-      "rest_seat": 9,
+      "rest_seat": 8,
       "schedule_no": "2610311351020",
       "screen": "르 리클라이너 6관(마이어사운드)",
       "sold_out_explicit": false,
@@ -1742,7 +1742,7 @@
       "status": "OPEN",
       "total_seat": 150,
       "type": "무대인사",
-      "updated_at_kst": "2026-10-19T10:22:18+09:00"
+      "updated_at_kst": "2026-10-19T11:40:51+09:00"
     },
     "1351|20261031|2610311351021|무대인사": {
       "date": "20261031",
@@ -1758,7 +1758,7 @@
       "status": "OPEN",
       "total_seat": 298,
       "type": "무대인사",
-      "updated_at_kst": "2026-10-19T10:22:18+09:00"
+      "updated_at_kst": "2026-10-19T11:40:51+09:00"
     },
     "1351|20261031|2610311351022|무대인사": {
       "date": "20261031",
@@ -1774,7 +1774,7 @@
       "status": "OPEN",
       "total_seat": 150,
       "type": "무대인사",
-      "updated_at_kst": "2026-10-19T10:22:18+09:00"
+      "updated_at_kst": "2026-10-19T11:40:51+09:00"
     },
     "1351|20261104|2611041351020|무대인사": {
       "date": "20261104",
@@ -1790,7 +1790,7 @@
       "status": "OPEN",
       "total_seat": 431,
       "type": "무대인사",
-      "updated_at_kst": "2026-10-19T10:22:22+09:00"
+      "updated_at_kst": "2026-10-19T11:40:56+09:00"
     },
     "1351|20261104|2611041351021|무대인사": {
       "date": "20261104",
@@ -1806,7 +1806,7 @@
       "status": "OPEN",
       "total_seat": 150,
       "type": "무대인사",
-      "updated_at_kst": "2026-10-19T10:22:22+09:00"
+      "updated_at_kst": "2026-10-19T11:40:56+09:00"
     },
     "1351|20261104|2611041351022|무대인사": {
       "date": "20261104",
@@ -1822,7 +1822,7 @@
       "status": "OPEN",
       "total_seat": 134,
       "type": "무대인사",
-      "updated_at_kst": "2026-10-19T10:22:22+09:00"
+      "updated_at_kst": "2026-10-19T11:40:56+09:00"
     },
     "1351|20261104|2611041351023|무대인사": {
       "date": "20261104",
@@ -1838,7 +1838,7 @@
       "status": "OPEN",
       "total_seat": 431,
       "type": "무대인사",
-      "updated_at_kst": "2026-10-19T10:22:22+09:00"
+      "updated_at_kst": "2026-10-19T11:40:56+09:00"
     },
     "1351|20261104|2611041351024|무대인사": {
       "date": "20261104",
@@ -1854,7 +1854,7 @@
       "status": "OPEN",
       "total_seat": 150,
       "type": "무대인사",
-      "updated_at_kst": "2026-10-19T10:22:22+09:00"
+      "updated_at_kst": "2026-10-19T11:40:56+09:00"
     },
     "1351|20261107|2611071351019|무대인사": {
       "date": "20261107",
@@ -1870,7 +1870,7 @@
       "status": "OPEN",
       "total_seat": 152,
       "type": "무대인사",
-      "updated_at_kst": "2026-10-19T10:22:25+09:00"
+      "updated_at_kst": "2026-10-19T11:40:43+09:00"
     },
     "1351|20261107|2611071351020|무대인사": {
       "date": "20261107",
@@ -1886,7 +1886,7 @@
       "status": "OPEN",
       "total_seat": 152,
       "type": "무대인사",
-      "updated_at_kst": "2026-10-19T10:22:25+09:00"
+      "updated_at_kst": "2026-10-19T11:40:43+09:00"
     },
     "1351|20261107|2611071351021|무대인사": {
       "date": "20261107",
@@ -1902,7 +1902,7 @@
       "status": "OPEN",
       "total_seat": 156,
       "type": "무대인사",
-      "updated_at_kst": "2026-10-19T10:22:25+09:00"
+      "updated_at_kst": "2026-10-19T11:40:43+09:00"
     },
     "1351|20261107|2611071351022|무대인사": {
       "date": "20261107",
@@ -1910,7 +1910,7 @@
       "link": "https://m.megabox.co.kr/booking/seat?playSchdlNo=2611071351022",
       "movie": "최종면접",
       "preparing_explicit": false,
-      "rest_seat": 27,
+      "rest_seat": 23,
       "schedule_no": "2611071351022",
       "screen": "르 리클라이너 5관(마이어사운드)",
       "sold_out_explicit": false,
@@ -1918,7 +1918,7 @@
       "status": "OPEN",
       "total_seat": 156,
       "type": "무대인사",
-      "updated_at_kst": "2026-10-19T10:22:25+09:00"
+      "updated_at_kst": "2026-10-19T11:40:43+09:00"
     },
     "1351|20261107|2611071351023|무대인사": {
       "date": "20261107",
@@ -1934,7 +1934,7 @@
       "status": "OPEN",
       "total_seat": 399,
       "type": "무대인사",
-      "updated_at_kst": "2026-10-19T10:22:25+09:00"
+      "updated_at_kst": "2026-10-19T11:40:43+09:00"
     },
     "1351|20261107|2611071351024|무대인사": {
       "date": "20261107",
@@ -1942,7 +1942,7 @@
       "link": "https://m.megabox.co.kr/booking/seat?playSchdlNo=2611071351024",
       "movie": "최종면접",
       "preparing_explicit": false,
-      "rest_seat": 213,
+      "rest_seat": 212,
       "schedule_no": "2611071351024",
       "screen": "MEGA | LED 3관",
       "sold_out_explicit": false,
@@ -1950,7 +1950,7 @@
       "status": "OPEN",
       "total_seat": 399,
       "type": "무대인사",
-      "updated_at_kst": "2026-10-19T10:22:25+09:00"
+      "updated_at_kst": "2026-10-19T11:40:43+09:00"
     }
   }
 }
